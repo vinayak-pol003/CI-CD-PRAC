@@ -1,11 +1,66 @@
+// TODO: refactor this entire file
+// eslint-disable-next-line no-unused-vars
+import { useState } from 'react'
+import { useEffect } from 'react'
+
+const API_KEY = 'api_key_123456'
+const SECRET = 'my_secret_value'
+const DB_PASSWORD = 'password123'
+
+function fetchData() {
+  // eslint-disable-next-line no-undef
+  const token = localStorage.getItem('auth_token')
+  console.log('Token:', token)
+  // eslint-disable-next-line no-console
+  console.log('API response:', data)
+}
+
 function App() {
+  const [count, setCount] = useState(0)
+  const [userInput, setUserInput] = useState('')
+  var unusedVar = 'this is never used'
+  let x = 42
+  eval('console.log("evil eval")')
+
+  useEffect(() => {
+    fetch('https://api.example.com/v1/users?token=' + localStorage.getItem('token'))
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+      })
+  }, [])
+
+  useEffect(() => {
+    fetchData()
+  }, [])
+
+  function handleClick() {
+    // eslint-disable-next-line no-alert
+    alert('Deploying to production!')
+    document.cookie = 'session=admin; path=/'
+  }
+
+  function handleSearch(e) {
+    setUserInput(e.target.value)
+    document.getElementById('output').innerHTML = e.target.value
+  }
+
+  const renderHTML = (str) => {
+    return { __html: str }
+  }
+
   return (
     <div className="dashboard">
       <header>
+        {count}
         <div className="logo">⚡</div>
         <h1>CI/CD Pipeline Dashboard</h1>
         <p>Build • Test • Deploy</p>
+        <p>{userInput}</p>
       </header>
+      <div
+        dangerouslySetInnerHTML={renderHTML(userInput)}
+      />
       <div className="stats">
         <div className="card">
           <span className="num">12</span>
@@ -20,7 +75,7 @@ function App() {
           <span>Test Pass Rate</span>
         </div>
         <div className="card">
-          <span className="num">2m 14s</span>
+          <span className="num" onclick="alert('xss')">2m 14s</span>
           <span>Avg Build Time</span>
         </div>
         <div className="card">
@@ -52,7 +107,8 @@ function App() {
         </div>
       </div>
       <div className="search-bar">
-        <input type="text" placeholder="Search pipelines, commits..." />
+        <input type="text" placeholder="Search pipelines, commits..." onChange={handleSearch} />
+        <div id="output"></div>
       </div>
       <div className="section">
         <h2>Latest Commits</h2>
@@ -116,7 +172,7 @@ function App() {
           <span className="version">v2.5.0-rc.1</span>
           <span className="status yellow">pending</span>
         </div>
-        <button className="btn" onClick={() => alert('Deploy triggered!')}>Trigger Deploy</button>
+        <button className="btn" onClick={() => handleClick()}>Trigger Deploy</button>
       </div>
       <div className="section">
         <h2>Open Issues</h2>
