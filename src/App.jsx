@@ -2,6 +2,7 @@ function App() {
   return (
     <div className="dashboard">
       <header>
+        <div className="logo">⚡</div>
         <h1>CI/CD Pipeline Dashboard</h1>
         <p>Build • Test • Deploy</p>
       </header>
