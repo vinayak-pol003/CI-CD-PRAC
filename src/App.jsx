@@ -27,6 +27,10 @@ function App() {
         <span className="badge green">build passing</span>
         <span className="badge yellow">coverage 87%</span>
         <span className="badge">vulnerabilities 0</span>
+        <span className="badge green">uptime 99.9%</span>
+      </div>
+      <div className="search-bar">
+        <input type="text" placeholder="Search pipelines, commits..." />
       </div>
       <div className="section">
         <h2>Latest Commits</h2>
@@ -85,6 +89,16 @@ function App() {
           <span className="status yellow">pending</span>
         </div>
         <button className="btn" onClick={() => alert('Deploy triggered!')}>Trigger Deploy</button>
+      </div>
+      <div className="section">
+        <h2>Contributors</h2>
+        <div className="contributors">
+          <span className="avatar" style={{background: '#aa3bff'}}>VP</span>
+          <span className="avatar" style={{background: '#16a34a'}}>AK</span>
+          <span className="avatar" style={{background: '#ca8a04'}}>RJ</span>
+          <span className="avatar" style={{background: '#dc2626'}}>SK</span>
+          <span className="avatar plus">+3</span>
+        </div>
       </div>
       <footer>
         <p>Last updated: {new Date().toLocaleString()}</p>
