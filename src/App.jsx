@@ -23,6 +23,11 @@ function App() {
           <span>Avg Build Time</span>
         </div>
       </div>
+      <div className="badge-row">
+        <span className="badge green">build passing</span>
+        <span className="badge yellow">coverage 87%</span>
+        <span className="badge">vulnerabilities 0</span>
+      </div>
       <div className="section">
         <h2>Latest Commits</h2>
         <div className="commit">
@@ -58,7 +63,7 @@ function App() {
           <span className="version">v2.5.0-rc.1</span>
           <span className="status yellow">pending</span>
         </div>
-        <button className="btn">Trigger Deploy</button>
+        <button className="btn" onClick={() => alert('Deploy triggered!')}>Trigger Deploy</button>
       </div>
       <footer>
         <p>Last updated: {new Date().toLocaleString()}</p>
