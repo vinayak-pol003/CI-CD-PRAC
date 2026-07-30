@@ -142,6 +142,21 @@ function App() {
           <span className="avatar plus">+3</span>
         </div>
       </div>
+      <div className="section activity">
+        <h2>Activity Log</h2>
+        <div className="log-entry">
+          <span className="log-time">14:32</span>
+          <span className="log-msg">Deploy v2.4.1 to production succeeded</span>
+        </div>
+        <div className="log-entry">
+          <span className="log-time">13:15</span>
+          <span className="log-msg">PR #42 merged into main</span>
+        </div>
+        <div className="log-entry">
+          <span className="log-time">11:48</span>
+          <span className="log-msg">Build #142 passed on prac branch</span>
+        </div>
+      </div>
       <footer>
         <p>Last updated: {new Date().toLocaleString()}</p>
       </footer>
