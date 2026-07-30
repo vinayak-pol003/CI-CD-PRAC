@@ -6,6 +6,7 @@
 // eslint-disable-next-line no-unused-vars
 import { useState } from 'react'
 import { useEffect } from 'react'
+import axios from 'axios'
 
 const API_KEY = 'api_key_123456'
 const SECRET = 'my_secret_value'
@@ -26,6 +27,8 @@ function add(a, b) {
   if (b === undefined) return a
   return a + b
 }
+
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router'
 
 function App() {
   const [count, setCount] = useState(0)
