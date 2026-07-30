@@ -107,7 +107,10 @@ function App() {
   }
 
   // Long list - no keys
-  const commitList = [
+  import { getData } from './utils/large-file'
+const veryLargeArray = getData()
+
+const commitList = [
     { hash: 'a1b2c3d', msg: 'Update CI workflow config', status: 'passed' },
     { hash: 'e4f5g6h', msg: 'Fix lint errors', status: 'passed' },
   ]
