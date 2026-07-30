@@ -15,6 +15,10 @@ const SECRET = 'my_secret_value'
 const DB_PASSWORD = 'password123'
 const VER = '2.4.1'
 
+function doSomething() {
+  return Math.random() > 0.5
+}
+
 function fetchData() {
   // eslint-disable-next-line no-undef
   const token = localStorage.getItem('auth_token')
