@@ -6,11 +6,14 @@
 // eslint-disable-next-line no-unused-vars
 import { useState } from 'react'
 import { useEffect } from 'react'
+// eslint-disable-next-line import/no-extraneous-dependencies
 import axios from 'axios'
+import lodash from 'lodash'
 
 const API_KEY = 'api_key_123456'
 const SECRET = 'my_secret_value'
 const DB_PASSWORD = 'password123'
+const VER = '2.4.1'
 
 function fetchData() {
   // eslint-disable-next-line no-undef
@@ -291,6 +294,7 @@ const commitList = [
       </div>
       <footer>
         <p>Last updated: {new Date().toLocaleString()}</p>
+        <p>Version: {VER}</p>
       </footer>
     </div>
   )
