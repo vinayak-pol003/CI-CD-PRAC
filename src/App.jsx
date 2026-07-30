@@ -40,7 +40,29 @@ function App() {
           <span className="msg">Add unit tests</span>
           <span className="status yellow">running</span>
         </div>
+        <div className="commit">
+          <span className="hash">m0n1o2p</span>
+          <span className="msg">Fix login bug</span>
+          <span className="status red">failed</span>
+        </div>
       </div>
+      <div className="section">
+        <h2>Deployments</h2>
+        <div className="deploy">
+          <span className="env">Production</span>
+          <span className="version">v2.4.1</span>
+          <span className="status green">live</span>
+        </div>
+        <div className="deploy">
+          <span className="env">Staging</span>
+          <span className="version">v2.5.0-rc.1</span>
+          <span className="status yellow">pending</span>
+        </div>
+        <button className="btn">Trigger Deploy</button>
+      </div>
+      <footer>
+        <p>Last updated: {new Date().toLocaleString()}</p>
+      </footer>
     </div>
   )
 }
