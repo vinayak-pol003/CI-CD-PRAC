@@ -63,7 +63,7 @@ function App() {
           <span className="version">v2.5.0-rc.1</span>
           <span className="status yellow">pending</span>
         </div>
-        <button className="btn">Trigger Deploy</button>
+        <button className="btn" onClick={() => alert('Deploy triggered!')}>Trigger Deploy</button>
       </div>
       <footer>
         <p>Last updated: {new Date().toLocaleString()}</p>
