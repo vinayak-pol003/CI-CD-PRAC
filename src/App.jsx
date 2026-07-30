@@ -29,6 +29,23 @@ function App() {
         <span className="badge">vulnerabilities 0</span>
         <span className="badge green">uptime 99.9%</span>
       </div>
+      <div className="progress-section">
+        <div className="progress-item">
+          <span>Build Health</span>
+          <div className="bar-track"><div className="bar-fill" style={{width: '92%'}}></div></div>
+          <span className="bar-label">92%</span>
+        </div>
+        <div className="progress-item">
+          <span>Code Coverage</span>
+          <div className="bar-track"><div className="bar-fill" style={{width: '87%'}}></div></div>
+          <span className="bar-label">87%</span>
+        </div>
+        <div className="progress-item">
+          <span>Deployment Success</span>
+          <div className="bar-track"><div className="bar-fill" style={{width: '99%'}}></div></div>
+          <span className="bar-label">99%</span>
+        </div>
+      </div>
       <div className="search-bar">
         <input type="text" placeholder="Search pipelines, commits..." />
       </div>
@@ -75,6 +92,12 @@ function App() {
           <span className="status red">failed</span>
           <span className="time">0m 45s</span>
         </div>
+      </div>
+      <div className="tabs">
+        <span className="tab active">All</span>
+        <span className="tab">Pull Requests</span>
+        <span className="tab">Branches</span>
+        <span className="tab">Tags</span>
       </div>
       <div className="section">
         <h2>Deployments</h2>
