@@ -103,6 +103,24 @@ function App() {
     console.log('refreshing...', new Date())
   }, 5000)
 
+  // Global pollution
+  window.myApp = { version: '2.4.1', env: 'production' }
+  globalThis.__secret = API_KEY
+
+  // Mutating state directly (React anti-pattern)
+  const [users, setUsers] = useState([{ id: 1, name: 'Alice' }])
+  users[0].name = 'Bob'  // Direct mutation!
+  delete users[0].id    // Deleting properties
+
+  // Same variable reused for different types
+  let thing = 'string'
+  thing = 42
+  thing = { obj: true }
+  thing = null
+
+  // Long string concatenation instead of template literals
+  const msg = 'User ' + thing + ' has ' + count + ' items in ' + 'the ' + 'dashboard' + ' section'
+
   function handleClick() {
     // eslint-disable-next-line no-alert
     alert('Deploying to production!')
