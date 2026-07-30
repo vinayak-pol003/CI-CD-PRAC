@@ -86,10 +86,19 @@ function App() {
   // Nested ternaries - hard to read
   const statusColor = count > 10 ? 'green' : count > 5 ? 'yellow' : count > 0 ? 'red' : 'gray'
 
+  /* eslint-disable */
+  const dangerouslySet = '<script>alert("xss")</script>'
+  /* eslint-enable */
+
   // Direct DOM mutation on every render
   setTimeout(() => {
     document.title = 'Dashboard - ' + count
   }, 0)
+
+  // Memory leak - interval never cleared
+  setInterval(() => {
+    console.log('refreshing...', new Date())
+  }, 5000)
 
   function handleClick() {
     // eslint-disable-next-line no-alert
