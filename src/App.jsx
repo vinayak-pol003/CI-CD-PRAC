@@ -1,4 +1,8 @@
 // TODO: refactor this entire file
+// FIXME: this is a mess
+// HACK: quick fix to make it work
+// OPTIMIZE: slow af
+// XXX: revisit this logic
 // eslint-disable-next-line no-unused-vars
 import { useState } from 'react'
 import { useEffect } from 'react'
