@@ -23,6 +23,10 @@ function App() {
           <span className="num">2m 14s</span>
           <span>Avg Build Time</span>
         </div>
+        <div className="card">
+          <span className="num">7</span>
+          <span>Active Branches</span>
+        </div>
       </div>
       <div className="badge-row">
         <span className="badge green">build passing</span>
