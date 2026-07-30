@@ -125,6 +125,20 @@ function App() {
   // Long string concatenation instead of template literals
   const msg = 'User ' + thing + ' has ' + count + ' items in ' + 'the ' + 'dashboard' + ' section'
 
+  // Using == instead of ===
+  if (count == '5') console.log('loose comparison')
+  if (thing == null) console.log('another loose')
+
+  // Sync XHR - blocks main thread
+  const xhr = new XMLHttpRequest()
+  xhr.open('GET', 'https://api.example.com/data', false)
+  xhr.send()
+
+  // assign inside conditional
+  if ((x = doSomething())) {
+    console.log('assignment in condition')
+  }
+
   function handleClick() {
     // eslint-disable-next-line no-alert
     alert('Deploying to production!')
