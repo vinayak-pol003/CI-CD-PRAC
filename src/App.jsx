@@ -23,6 +23,11 @@ function App() {
           <span>Avg Build Time</span>
         </div>
       </div>
+      <div className="badge-row">
+        <span className="badge green">build passing</span>
+        <span className="badge yellow">coverage 87%</span>
+        <span className="badge">vulnerabilities 0</span>
+      </div>
       <div className="section">
         <h2>Latest Commits</h2>
         <div className="commit">
