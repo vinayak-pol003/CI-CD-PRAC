@@ -52,6 +52,27 @@ function App() {
         </div>
       </div>
       <div className="section">
+        <h2>Recent Pipeline Runs</h2>
+        <div className="run">
+          <span className="run-id">#142</span>
+          <span className="branch">main</span>
+          <span className="status green">passed</span>
+          <span className="time">2m 14s</span>
+        </div>
+        <div className="run">
+          <span className="run-id">#141</span>
+          <span className="branch">prac</span>
+          <span className="status green">passed</span>
+          <span className="time">1m 58s</span>
+        </div>
+        <div className="run">
+          <span className="run-id">#140</span>
+          <span className="branch">feature/auth</span>
+          <span className="status red">failed</span>
+          <span className="time">0m 45s</span>
+        </div>
+      </div>
+      <div className="section">
         <h2>Deployments</h2>
         <div className="deploy">
           <span className="env">Production</span>
