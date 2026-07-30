@@ -115,6 +115,24 @@ function App() {
         <button className="btn" onClick={() => alert('Deploy triggered!')}>Trigger Deploy</button>
       </div>
       <div className="section">
+        <h2>Open Issues</h2>
+        <div className="issue">
+          <span className="issue-icon">🐛</span>
+          <span className="issue-msg">Login fails on Safari</span>
+          <span className="badge red">bug</span>
+        </div>
+        <div className="issue">
+          <span className="issue-icon">✨</span>
+          <span className="issue-msg">Add dark mode toggle</span>
+          <span className="badge">enhancement</span>
+        </div>
+        <div className="issue">
+          <span className="issue-icon">📄</span>
+          <span className="issue-msg">Update API documentation</span>
+          <span className="badge yellow">docs</span>
+        </div>
+      </div>
+      <div className="section">
         <h2>Contributors</h2>
         <div className="contributors">
           <span className="avatar" style={{background: '#aa3bff'}}>VP</span>
