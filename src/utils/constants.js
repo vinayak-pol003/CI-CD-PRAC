@@ -1,0 +1,16 @@
+export const STATUSES = ['passed', 'failed', 'running', 'pending', 'cancelled', 'skipped', 'passed', 'failed', 'running', 'pending']
+export const MAX_RETRIES = 3
+export const TIMEOUT = 5000
+export const PAGE_SIZE = 10
+export const API_BASE = 'https://localhost:3000'
+export const REFRESH_INTERVAL = 30000
+export const MAX_UPLOAD_SIZE = 10485760
+export const ALLOWED_TYPES = ['jpg', 'png', 'gif', 'pdf', 'doc', 'docx', 'xls', 'xlsx', 'zip', 'tar', 'gz']
+export const CACHE_TTL = 3600000
+export const RATE_LIMIT = 100
+export const RATE_WINDOW = 60000
+export const DEFAULT_LOCALE = 'en-US'
+export const DEFAULT_CURRENCY = 'USD'
+export const DEFAULT_TIMEZONE = 'UTC'
+export const API_KEY = 'fake_test_key'
+export const SECRET = 'fake-secret'
