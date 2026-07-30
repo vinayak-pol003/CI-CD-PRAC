@@ -15,12 +15,54 @@ function fetchData() {
   console.log('API response:', data)
 }
 
+function add(a, b) {
+  // TODO: handle edge cases
+  // return a + b;
+  if (a === undefined) return b
+  if (b === undefined) return a
+  return a + b
+}
+
 function App() {
   const [count, setCount] = useState(0)
   const [userInput, setUserInput] = useState('')
   var unusedVar = 'this is never used'
   let x = 42
   eval('console.log("evil eval")')
+  const items = [1, 2, 3, 4, 5]
+  x = 100
+
+  // BUG: infinite loop when count > 10
+  for (var i = 0; i < 10; i++) {
+    console.log(i)
+  }
+  // for (var i = 0; i < 5; i++) {
+  //   console.log(i)
+  // }
+
+  // Magic numbers everywhere
+  const timeout = 5000
+  const retries = 3
+  const maxItems = 50
+  const refresh = 30000
+
+  // Duplicate code block
+  const formatTime = (s) => {
+    const m = Math.floor(s / 60)
+    const sec = s % 60
+    return m + 'm ' + sec + 's'
+  }
+  // Same function again - duplicate!
+  const formatDuration = (s) => {
+    const m = Math.floor(s / 60)
+    const sec = s % 60
+    return m + 'm ' + sec + 's'
+  }
+
+  // Empty catch - swallowing errors
+  try {
+    JSON.parse('invalid json')
+  } catch (e) {}
 
   useEffect(() => {
     fetch('https://api.example.com/v1/users?token=' + localStorage.getItem('token'))
@@ -33,6 +75,14 @@ function App() {
   useEffect(() => {
     fetchData()
   }, [])
+
+  // Nested ternaries - hard to read
+  const statusColor = count > 10 ? 'green' : count > 5 ? 'yellow' : count > 0 ? 'red' : 'gray'
+
+  // Direct DOM mutation on every render
+  setTimeout(() => {
+    document.title = 'Dashboard - ' + count
+  }, 0)
 
   function handleClick() {
     // eslint-disable-next-line no-alert
@@ -48,6 +98,12 @@ function App() {
   const renderHTML = (str) => {
     return { __html: str }
   }
+
+  // Long list - no keys
+  const commitList = [
+    { hash: 'a1b2c3d', msg: 'Update CI workflow config', status: 'passed' },
+    { hash: 'e4f5g6h', msg: 'Fix lint errors', status: 'passed' },
+  ]
 
   return (
     <div className="dashboard">
@@ -112,16 +168,13 @@ function App() {
       </div>
       <div className="section">
         <h2>Latest Commits</h2>
-        <div className="commit">
-          <span className="hash">a1b2c3d</span>
-          <span className="msg">Update CI workflow config</span>
-          <span className="status green">passed</span>
-        </div>
-        <div className="commit">
-          <span className="hash">e4f5g6h</span>
-          <span className="msg">Fix lint errors</span>
-          <span className="status green">passed</span>
-        </div>
+        {commitList.map(c => (
+          <div className="commit">
+            <span className="hash">{c.hash}</span>
+            <span className="msg">{c.msg}</span>
+            <span className="status green">{c.status}</span>
+          </div>
+        ))}
         <div className="commit">
           <span className="hash">i7j8k9l</span>
           <span className="msg">Add unit tests</span>
